@@ -1,6 +1,8 @@
 import os
 import requests
-from tweet import Tweet
+from Tweet import Tweet
+
+TIMELINE_URL = "https://api.twitter.com/1.1/statuses/user_timeline.json"
 
 class Timeline:
     header = {"Authorization" : os.environ["TWITTER_KEY"]}
@@ -11,6 +13,6 @@ class Timeline:
         self.fetchTimeline()
 
     def fetchTimeline(self):
-        r = requests.get("https://api.twitter.com/1.1/statuses/user_timeline.json", headers = Timeline.header, params = {"screen_name" : self.timeline})
+        r = requests.get(TIMELINE_URL, headers = Timeline.header, params = {"screen_name" : self.timeline})
         for tweet in r.json():
             self.tweets.append(Tweet(tweet))
