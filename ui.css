@@ -1,1 +1,35 @@
-a
+body {
+  margin: 5;
+  font-family: Verdana, Helvetica, Arial, sans-serif;
+
+}
+
+section {
+  float: left;
+  margin: 0 1.5%;
+  width: 30%;
+}
+
+div {
+  border: thin solid black;
+  padding-left: 0.5em;
+}
+
+.middle_section{
+  float:left;
+  border: thin solid black;
+  padding-left: 0.5em;
+}
+
+.right_section {
+  float: left;
+}
+
+.left_section {
+  float:left;
+  border: thin solid black;
+}
+
+h1 {
+  text-align: center;
+}
