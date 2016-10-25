@@ -10,4 +10,4 @@ with open('mockupdata.json') as json_data:
 
 @app.route('/')
 def root_route():
-    return render_template('ui.html', artist = objekti)
+    return render_template('artist.html', artist = objekti)
