@@ -1,6 +1,13 @@
-from flask import Flask
+#-*- coding: utf-8 -*-
+import json
+
+from flask import Flask, render_template
 app = Flask(__name__)
 
+with open('mockupdata.json') as json_data:
+    objekti = json.load(json_data)
+
+
 @app.route('/')
-def hello_world():
-    return 'Hello World!'
+def root_route():
+    return render_template('ui.html', artist = objekti)

@@ -1,0 +1,11 @@
+{
+  "artist" : "Bändin nimi",
+  "twitter" : "Twitter osoite",
+  "soundcloud" : "Soundcloud osoite",
+  "country" : "Kotimaa",
+  "city" : "Kotikaupunki",
+  "genre" : "Bassomusiikki",
+  "found" : "2016",
+  "members" : ["Minä", "sinä", "hän"],
+  "description" : "Tässä bändi kertoo itsestään jänniä juttuja"
+}

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Bambimusiikki</title>
-<link rel="stylesheet" type="text/css" href="ui.css" />
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='artist.css') }} />
 </head>
 
 <body>
@@ -16,11 +16,19 @@
   </section>
   <section class="middle_section">
     <img src="profiili.png">
-        <h3>Bändin nimi: </h3>
-        <h3>Kotikaupunki: </h3>
-        <h3>Tyylilaji: </h3>
-        <h3>Jäsenet: </h3>
-        <h3>Perustamisvuosi: </h3>
+        <h3>Name: {{ artist["artist"] }}</h3>
+        <h3>Country of origin: {{ artist["country"] }}</h3>
+        <h3>City of origin: {{ artist["city"] }}</h3>
+        <h3>Genre: {{ artist["genre"] }}</h3>
+        <h3>Founded: {{ artist["found"] }}</h3>
+        <h3>Members: </h3>
+        <ul>
+          {% for member in artist["members"] %}
+            <li>{{ member }}</li>
+          {% endfor %}
+        </ul>
+        <h3>Description: {{ artist["description"] }}</h3>
+
   </section>
 
   <section class="right_section">
