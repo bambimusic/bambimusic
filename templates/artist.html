@@ -24,11 +24,19 @@
             <h3>Genre: {{ artist["genre"] }}</h3>
             <h3>Founded: {{ artist["found"] }}</h3>
             <h3>Members: </h3>
-            <ul>
+            <ul class="list-unstyled">
               {% for member in artist["members"] %}
                 <li>{{ member }}</li>
               {% endfor %}
             </ul>
+            <dl class="dl-horizontal">
+              <dt>Members: </dt>
+              <dd class="list-unstyled">
+                  {% for member in artist["members"] %}
+                <li>{{ member }}</li>
+                  {% endfor %}
+              </dd>
+            </dl>
             <h3>Description: {{ artist["description"] }}</h3>
 
       </section>

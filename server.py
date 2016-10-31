@@ -11,3 +11,7 @@ with open('mockupdata.json') as json_data:
 @app.route('/')
 def root_route():
     return render_template('artist.html', artist = objekti)
+
+@app.route('/add')
+def add_route():
+    return render_template('add.html')
