@@ -1,3 +1,4 @@
+from ttp import ttp, utils
 
 class Tweet:
 
@@ -10,6 +11,11 @@ class Tweet:
         self.mentions = User.parseMentions(tweet["entities"]["user_mentions"])
         self.hashtags = tweet['entities']['hashtags']
         self.media = Media.parseMedias(tweet["entities"].get("media"))
+
+    def toHTML(self):
+        parser = ttp.Parser()
+        return parser.parse(self.text).html
+
 
 class User:
 
@@ -57,6 +63,10 @@ class URL:
         self.short = url["url"]
         self.display = url["display_url"]
         self.expanded = url["expanded_url"]
+        self.place = url.get("indices")
+
+    def toHTML(self):
+        return r'<a href="' + self.short + r'", title="' + self.expanded + r'">' + self.display + r'</a>'
 
     @staticmethod
     def parseURLs(urls):
