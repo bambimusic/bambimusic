@@ -5,17 +5,16 @@
 <title>Bambimusiikki</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='artist.css') }} />
+<script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 </head>
 
 <body>
 
   <header><img src="tyhja.png"><h1>LOGO</h1></header>
 
-  <div class="container-fluid">
+  <div class="container">
     <div class="row">
-      <section class ="left_section col-md-3">
-      </section>
-      <section class="middle_section col-md-6">
+      <section class="middle_section col-md-8">
         <img src="profiili.png">
             <h3>Name: {{ artist["artist"] }}</h3>
             <h3>Country of origin: {{ artist["country"] }}</h3>
@@ -40,10 +39,14 @@
 
       </section>
 
-      <section class="right_section col-md-3">
+      <section class="right_section col-md-4">
         <div class="twitter">
           <h2>Twitter</h2>
-          <h3>Tänne twiittejä... </h3>
+          <div class="tweets">
+            {% for tweet in tweets %}
+              {% include "tweet.html" %}
+            {% endfor %}
+          </div>
         </div>
     </br>
       <div class="soundcloud">

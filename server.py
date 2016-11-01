@@ -17,8 +17,8 @@ def root_route():
 @app.route('/<string:artist_slug>')
 def artist_route(artist_slug):
     #TODO: artist = db.fetch(artist_slug)
-    # twitter = Twitter.Timeline(artist.twitter)
-    return render_template('artist.html', artist = objekti)
+    twitter = Twitter.Timeline('voiceinsidehead')
+    return render_template('artist.html', artist = objekti, tweets = twitter.tweets)
 
 
 @app.route('/add', methods=['GET', 'POST'])
