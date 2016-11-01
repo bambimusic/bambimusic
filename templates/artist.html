@@ -5,6 +5,7 @@
 <title>Bambimusiikki</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='artist.css') }} />
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -34,7 +35,22 @@
                   {% endfor %}
               </dd>
             </dl>
-            <h3>Description: {{ artist["description"] }}</h3>
+            <!-- <h3>Description: {{ artist["description"] }}</h3> -->
+
+            <div>
+
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#description" data-toggle="tab" aria-controls="description" role="tab">Description</a></li>
+                <li role="presentation"><a href="#discography" data-toggle="tab" aria-controls="discography" role="tab">Discography</a></li>
+                <li role="presentation"><a href="#links" data-toggle="tab" aria-controls="links" role="tab">Links</a></li>
+              </ul>
+
+              <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="description"><p>{{ artist["description"] }}</p></div>
+                <div role="tabpanel" class="tab-pane" id="discography"><p>jotain albumeita</p></div>
+                <div role="tabpanel" class="tab-pane" id="links"><p>jotain linkkeja</p></div>
+              </div>
+            </div>
 
       </section>
 
