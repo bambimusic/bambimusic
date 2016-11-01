@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bambimusiikki</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href={{ url_for('static', filename='artist.css') }} />
+</head>
+
+<body>
+
+  <header><img src="tyhja.png"><h1>LOGO</h1></header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <section class ="left_section col-md-3">
+      </section>
+      <section class="middle_section col-md-6">
+        <img src="profiili.png">
+            <h3>Name: {{ artist["artist"] }}</h3>
+            <h3>Country of origin: {{ artist["country"] }}</h3>
+            <h3>City of origin: {{ artist["city"] }}</h3>
+            <h3>Genre: {{ artist["genre"] }}</h3>
+            <h3>Founded: {{ artist["found"] }}</h3>
+            <h3>Members: </h3>
+            <ul class="list-unstyled">
+              {% for member in artist["members"] %}
+                <li>{{ member }}</li>
+              {% endfor %}
+            </ul>
+            <dl class="dl-horizontal">
+              <dt>Members: </dt>
+              <dd class="list-unstyled">
+                  {% for member in artist["members"] %}
+                <li>{{ member }}</li>
+                  {% endfor %}
+              </dd>
+            </dl>
+            <h3>Description: {{ artist["description"] }}</h3>
+
+      </section>
+
+      <section class="right_section col-md-3">
+        <div class="twitter">
+          <h2>Twitter</h2>
+          <h3>Tänne twiittejä... </h3>
+        </div>
+    </br>
+      <div class="soundcloud">
+        <h2>Soundcloud</h2>
+        <h3>Tänne soundloud juttuja... </h3>
+      </div>
+      </section>
+
+    </div>
+  </div>
+
+
+</body>
+
+</html>
