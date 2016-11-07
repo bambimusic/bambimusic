@@ -5,6 +5,7 @@
 <title>Bambimusiikki</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='artist.css') }} />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 
@@ -47,7 +48,20 @@
 
               <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="description"><p>{{ artist["description"] }}</p></div>
-                <div role="tabpanel" class="tab-pane" id="discography"><p>jotain albumeita</p></div>
+                <div role="tabpanel" class="tab-pane" id="discography">
+                  <p>
+                    <table class="table">
+                      <tr>
+                        <th>Album name</th>
+                        <th>Publish year</th>
+                      </tr>
+                      <tr>
+                        <td>Album 1</td>
+                        <td>2016</td>
+                      </tr>
+                    </table>
+                  </p>
+                </div>
                 <div role="tabpanel" class="tab-pane" id="links"><p>jotain linkkeja</p></div>
               </div>
             </div>
@@ -68,7 +82,6 @@
 
     </div>
   </div>
-
 
 </body>
 
