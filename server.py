@@ -1,6 +1,4 @@
-
 from flask import Flask, render_template, request
-import DatabaseStuff
 from APICalls.Twitter import Twitter
 import json
 
@@ -12,8 +10,7 @@ with open('mockupdata.json') as json_data:
 
 @app.route('/')
 def root_route():
-    return render_template('main.html')
-
+    return render_template('index.html')
 
 @app.route('/<string:artist_slug>')
 def artist_route(artist_slug):
