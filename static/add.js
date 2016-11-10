@@ -1,11 +1,38 @@
+function newElement(elementName, className){
+  element = document.createElement(elementName);
+  element.className = className;
+  return element;
+}
+idIncrement = 1;
+
 window.onload = function() {
-  idIncrement = 0;
   $('#memberButton').click(function(){
-    var field = $( "#memberField" ).clone();
-    var id = "memberField" + idIncrement;
-    field.id = id;
+    var membFld = newElement("div", "memberField");
+    var membDiv = newElement("div", "col-sm-7");
+    var instrDiv = newElement("div", "col-sm-3");
+    var membInput = newElement("input", "form-control memberField");
+    membInput.id = "inputMembers" + idIncrement;
+    membInput.placeholder = "Member";
+    var instrInput = newElement("input", "form-control instrumentField");
+    instrInput.id = "inputMembersInstrument" + idIncrement;
+    instrInput.placeholder = "Instrument";
+
+    membFld.appendChild(membDiv);
+    membFld.appendChild(instrDiv);
+    membDiv.appendChild(membInput);
+    instrDiv.appendChild(instrInput);
+
+    var div = document.getElementById( "memberDiv");
+    div.appendChild(membFld);
+
     idIncrement++;
-    field.appendTo( ".memberDiv" );
+    //var field = $( "#memberField" ).clone();
+    //var id = "memberField" + idIncrement;
+    //field.id = id;
+    //idIncrement++;
+    //field.appendTo( ".memberDiv" );
+
+
     //var newInput = document.createElement("input");
     //newInput.setAttribute('type', 'text');
 
