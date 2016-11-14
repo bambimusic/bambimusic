@@ -7,7 +7,7 @@ idIncrement = 1;
 
 window.onload = function() {
   $('#memberButton').click(function(){
-    var membFld = newElement("div", "memberField");
+    var membFld = newElement("div", "memberField" +idIncrement);
     var membDiv = newElement("div", "col-sm-7");
     var instrDiv = newElement("div", "col-sm-3");
     var membInput = newElement("input", "form-control memberField");
@@ -26,18 +26,11 @@ window.onload = function() {
     div.appendChild(membFld);
 
     idIncrement++;
-    //var field = $( "#memberField" ).clone();
-    //var id = "memberField" + idIncrement;
-    //field.id = id;
-    //idIncrement++;
-    //field.appendTo( ".memberDiv" );
-
-
-    //var newInput = document.createElement("input");
-    //newInput.setAttribute('type', 'text');
-
-    // add the newly created element and its content into the DOM
-    //var currentDiv = document.getElementById("form-group");
-    //document.body.insertBefore(newInput, currentDiv);
   });
+
+  $('#removeMemberButton').click(function(){
+    $( ".memberField" +(idIncrement-1) ).remove();
+    if (idIncrement>1) {idIncrement--;}
+  });
+
 }
