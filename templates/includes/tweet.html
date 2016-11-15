@@ -8,7 +8,7 @@
         <h4>&#64;{{ tweet.user.screen}}</h4>
       </div>
     </a>
-    <img src="Twitter_Logo_Blue2.png" alt="Twitter Logo" style="width:32px;height:32px;"/>
+    <img src={{ url_for('static', filename='Twitter_Logo_Blue2.png') }} class="tweet-logo" alt="Twitter Logo" style="width:32px;height:32px;"/>
   </div>
   <div class="tweet-body">
     <p>
