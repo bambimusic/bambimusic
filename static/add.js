@@ -8,7 +8,7 @@ idIncrement = 1;
 window.onload = function() {
   $('#memberButton').click(function(){
     var membFld = newElement("div", "memberField" +idIncrement);
-    var membDiv = newElement("div", "col-sm-7");
+    var membDiv = newElement("div", "col-sm-9");
     var instrDiv = newElement("div", "col-sm-3");
     var membInput = newElement("input", "form-control memberField");
     membInput.id = "inputMembers" + idIncrement;

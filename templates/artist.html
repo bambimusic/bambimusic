@@ -13,23 +13,42 @@
 
 <body>
 
-  <header><img src="tyhja.png"><h1>LOGO</h1></header>
+  <header><img src="tyhja.png"><h1>{{ artist["artist"] }}</h1></header>
 
   <div class="container">
     <div class="row">
       <section class="middle_section col-md-8">
         <img src="profiili.png">
-            <h3>Name: {{ artist["artist"] }}</h3>
-            <h3>Country of origin: {{ artist["country"] }}</h3>
-            <h3>City of origin: {{ artist["city"] }}</h3>
-            <h3>Genre: {{ artist["genre"] }}</h3>
-            <h3>Founded: {{ artist["found"] }}</h3>
-            <h3>Members: </h3>
-            <ul class="list-unstyled">
+            <!--<h3>Name: {{ artist["artist"] }}</h3>-->
+            <dl class="dl-horizontal">
+              <dt>Country of origin: </dt>
+              <dd class="list-unstyled">
+                {{ artist["country"] }}
+              </dd>
+            </dl>
+            <dl class="dl-horizontal">
+              <dt>City of origin: </dt>
+              <dd class="list-unstyled">
+                {{ artist["city"] }}
+              </dd>
+            </dl>
+            <dl class="dl-horizontal">
+              <dt>Genre: </dt>
+              <dd class="list-unstyled">
+                {{ artist["genre"] }}
+              </dd>
+            </dl>
+            <dl class="dl-horizontal">
+              <dt>Founded: </dt>
+              <dd class="list-unstyled">
+                {{ artist["found"] }}
+              </dd>
+            </dl>
+            <!--<ul class="list-unstyled">
               {% for member in artist["members"] %}
                 <li>{{ member }}</li>
               {% endfor %}
-            </ul>
+            </ul> -->
             <dl class="dl-horizontal">
               <dt>Members: </dt>
               <dd class="list-unstyled">
