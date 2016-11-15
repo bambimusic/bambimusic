@@ -15,7 +15,7 @@
 <div class="container">
   <section class="middle col-md-12">
     <img src="profiili.png">
-        <form class="form-horizontal">
+        <form class="form-horizontal" action="{{ url_for(add_artist) }}" method="POST">
           <!-- <label>Band name:</label><input type="text" name="artist"><br> -->
           <div class="form-group">
               <label for="inputName" class="col-sm-2 control-label">Band/Artist name</label>
@@ -54,7 +54,7 @@
               </div>
           </div>
           <div class="form-group memberDiv">
-          <label for="inputMembers" class="col-sm-2 control-label">Members and instruments</label>
+            <label for="inputMembers" class="col-sm-2 control-label">Members and instruments</label>
             <div id="memberField">
               <div class="col-sm-7">
                   <input type="text" class="form-control" id="inputMembers" placeholder="Member">

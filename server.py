@@ -1,5 +1,6 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 from APICalls.Twitter import Twitter
+from Tietokannat import Tietokannat
 import json
 
 app = Flask(__name__)
@@ -23,3 +24,12 @@ def artist_route(artist_slug):
 def add_artist():
     if request.method == 'GET':
         return render_template('add.html')
+    else:
+        console.log("Form is working!")
+
+
+
+# if Tietokannat.addToDB(request.data):
+#     redirect(url_for('artist_route', artist_slug=data['slug'])
+# else
+#     return render_template('add.html' error="Username is in use.")
