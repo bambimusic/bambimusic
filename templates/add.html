@@ -45,9 +45,9 @@
               </div>
           </div>
           <div class="form-group">
-              <label for="inputSoundcloud" class="col-sm-2 control-label">SoundCloud address</label>
+              <label for="inputYoutube" class="col-sm-2 control-label">Youtube playlist address</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputSoundCloud" placeholder="SoundCloud address">
+                  <input type="text" class="form-control" id="inputYoutube" placeholder="Youtube playlist address">
               </div>
           </div>
           <div class="form-group">
@@ -92,12 +92,31 @@
             </div>
           </div>
           <div class="form-group">
+          <label for="inputDiscography" class="col-sm-2 control-label">Discography</label>
+            <div class="col-sm-10" id="albumDiv">
+              <div id="albumField0">
+                <div class="col-sm-9">
+                  <input type="text" class="form-control albumNameField" id="inputAlbums0" placeholder="Album name">
+                </div>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control albumYearField" id="inputYear0" placeholder="Publish year">
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-offset-2" id="buttonDiv">
+              <button type="button" id="albumButton" class="btn btn-default">Add another album field</button>
+              <button type="button" id="removeAlbumButton" class="btn btn-default">Remove an album field</button>
+            </div>
+          </div>
+          <div class="form-group">
               <label for="inputDescription" class="col-sm-2 control-label">Description</label>
               <div class="col-sm-10">
                   <!-- <input type="description" class="form-control" id="inputDescription" placeholder="Description"> -->
                   <textarea class="form-control" rows="3" id=inputDescription placeholder="Description"></textarea>
               </div>
           </div>
+
+</div>
           <!-- <label>Twitter:</label><input type="text" name="twitter"><br>
           <label>Soundcloud: </label><input type="text" name="soundcloud"><br>
           <label>Country of origin: </label><input type="text" name="country"><br>
