@@ -62,7 +62,9 @@ h1 {
 }
 /* Padding for spacing */
 .inner {
-  padding: 30px;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  padding-right: : 30px;
 }
 
 /*
