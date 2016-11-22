@@ -15,7 +15,7 @@
 <div class="container">
   <section class="middle col-md-12">
     <img src="profiili.png">
-        <form class="form-horizontal" action="{{ url_for(add_artist) }}" method="POST">
+        <form class="form-horizontal" action="{{ url_for("add_artist") }}" method="POST">
           <!-- <label>Band name:</label><input type="text" name="artist"><br> -->
           <div class="form-group">
               <label for="inputName" class="col-sm-2 control-label">Band/Artist name</label>
@@ -72,15 +72,6 @@
                   <textarea class="form-control" rows="3" id=inputDescription placeholder="Description"></textarea>
               </div>
           </div>
-          <!-- <label>Twitter:</label><input type="text" name="twitter"><br>
-          <label>Soundcloud: </label><input type="text" name="soundcloud"><br>
-          <label>Country of origin: </label><input type="text" name="country"><br>
-          <label>City of origin: </label><input type="text" name="city"><br>
-          <label>Genre: </label><input type="text" name="genre"><br>
-          <label>Year of foundation: </label><input type="text" name="found"><br>
-          <label>Members: </label><input type="text" name="members"><br>
-          <label>Description: </label><input type="text" name="description"><br> -->
-
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
 

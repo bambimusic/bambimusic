@@ -25,7 +25,8 @@ def add_artist():
     if request.method == 'GET':
         return render_template('add.html')
     else:
-        console.log("Form is working!")
+        print("Form is working!")
+        return "Post committed"
 
 
 
