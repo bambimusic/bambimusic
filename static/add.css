@@ -10,6 +10,11 @@ body {
   padding: 0;
 }
 
+#albumDiv {
+  margin: 0;
+  padding: 0;
+}
+
 #buttonDiv{
 }
 

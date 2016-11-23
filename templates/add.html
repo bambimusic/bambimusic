@@ -45,6 +45,12 @@
               </div>
           </div>
           <div class="form-group">
+              <label for="inputTwitter" class="col-sm-2 control-label">Twitter username</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputTwitter" name="twitter" placeholder="Twitter username">
+              </div>
+          </div>
+          <div class="form-group">
               <label for="inputYoutube" class="col-sm-2 control-label">Youtube playlist address</label>
               <div class="col-sm-10">
                   <input type="text" class="form-control" id="inputYoutube" placeholder="Youtube playlist address">
@@ -75,31 +81,31 @@
               </div>
           </div>
           <div class="form-group">
-          <label for="inputMembers" class="col-sm-2 control-label">Members and instruments</label>
+            <label for="inputMembers" class="col-sm-2 control-label">Members and instruments</label>
             <div class="col-sm-10" id="memberDiv">
-              <div id="memberField0">
-                <div class="col-sm-9">
-                  <input type="text" class="form-control memberField" id="inputMembers0" placeholder="Member">
-                </div>
-                <div class="col-sm-3">
-                  <input type="text" class="form-control instrumentField" id="inputMembersInstrument0" placeholder="Instrument">
+                <div class="memberField0">
+                  <div class="col-sm-9">
+                    <input class="form-control memberField" type="text" id="inputMembers0" placeholder="Member">
+                  </div>
+                  <div class="col-sm-3">
+                    <input class="form-control instrumentField" type="text" id="inputMembersInstrument0" placeholder="Instrument">
+                  </div>
                 </div>
               </div>
-            </div>
             <div class="col-sm-offset-2" id="buttonDiv">
               <button type="button" id="memberButton" class="btn btn-default">Add another member field</button>
               <button type="button" id="removeMemberButton" class="btn btn-default">Remove a member field</button>
             </div>
           </div>
           <div class="form-group">
-          <label for="inputDiscography" class="col-sm-2 control-label">Discography</label>
+            <label for="inputDiscography" class="col-sm-2 control-label">Discography</label>
             <div class="col-sm-10" id="albumDiv">
-              <div id="albumField0">
+              <div class="albumField0">
                 <div class="col-sm-9">
-                  <input type="text" class="form-control albumNameField" id="inputAlbums0" placeholder="Album name">
+                  <input class="form-control albumNameField" type="text" id="inputAlbum0" placeholder="Album name">
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control albumYearField" id="inputYear0" placeholder="Publish year">
+                  <input class="form-control albumYearField" type="text" id="inputYear0" placeholder="Publish year">
                 </div>
               </div>
             </div>
@@ -115,7 +121,12 @@
                   <textarea class="form-control" rows="3" id=inputDescription placeholder="Description"></textarea>
               </div>
           </div>
-
+          <div class="form-group">
+              <label for="inputSlug" class="col-sm-2 control-label">Semantic url</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputSlug" name="slug" placeholder="Slug">
+              </div>
+          </div>
 </div>
           <!-- <label>Twitter:</label><input type="text" name="twitter"><br>
           <label>Soundcloud: </label><input type="text" name="soundcloud"><br>

@@ -12,9 +12,13 @@ window.onload = function() {
     var membDiv = newElement("div", "col-sm-9");
     var instrDiv = newElement("div", "col-sm-3");
     var membInput = newElement("input", "form-control memberField");
+    membInput.type = "text";
+    membInput.name = "member" + memberIdIncrement;
     membInput.id = "inputMembers" + memberIdIncrement;
     membInput.placeholder = "Member";
     var instrInput = newElement("input", "form-control instrumentField");
+    instrInput.type = "text";
+    instrInput.name = "instrument" +memberIdIncrement;
     instrInput.id = "inputMembersInstrument" + memberIdIncrement;
     instrInput.placeholder = "Instrument";
 
@@ -38,10 +42,14 @@ window.onload = function() {
     var albumFld = newElement("div", "albumField" +albumIdIncrement);
     var albumDiv = newElement("div", "col-sm-9");
     var yearDiv = newElement("div", "col-sm-3");
-    var albumInput = newElement("input", "form-control albumField");
+    var albumInput = newElement("input", "form-control albumNameField");
+    albumInput.type = "text";
+    albumInput.name = "album" + albumIdIncrement;
     albumInput.id = "inputAlbum" + albumIdIncrement;
     albumInput.placeholder = "Album name";
-    var yearInput = newElement("input", "form-control yearField");
+    var yearInput = newElement("input", "form-control albumYearField");
+    yearInput.type = "text";
+    yearInput.name = "year" + albumIdIncrement;
     yearInput.id = "inputYear" + albumIdIncrement;
     yearInput.placeholder = "Publish year";
 
@@ -59,6 +67,11 @@ window.onload = function() {
   $('#removeAlbumButton').click(function(){
     $( ".albumField" +(albumIdIncrement-1) ).remove();
     if (albumIdIncrement>1) {albumIdIncrement--;}
+  });
+
+  $( '#inputSlug' ).change(function() {
+    var slug = $ ( '#inputSlug').val();
+  alert( slug.includes("testi") );
   });
 
 }
