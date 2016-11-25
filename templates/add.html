@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bambimusiikki</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='add.css') }} />
@@ -16,10 +17,21 @@
     <div class="navbar">
       <nav class="navbar navbar-inverse navbar-fixed-top">
          <div class="container-fluid">
-    <!-- Collect the nav links, forms, and other content for toggling -->
+           <!-- Collect the nav links, forms, and other content for toggling -->
+           <div class="navbar-header">
+             <button type="button" id ="navbar-toggle" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+           </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
               <li><a href="/">Home</a></li>
               <li><a href="/add">Add profile</a></li>
+              <li><a href="/artist">Artist</a></li>
             </ul>
             <form class="navbar-form navbar-left">
               <div class="form-group">
@@ -27,6 +39,7 @@
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
+            </div>
           </div>
       </nav>
     </div>
@@ -40,6 +53,12 @@
               <label for="inputName" class="col-sm-2 control-label">Band/Artist name</label>
               <div class="col-sm-10">
                   <input type="text" class="form-control" id="inputName" placeholder="Name">
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="inputTwitter" class="col-sm-2 control-label">Twitter username</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputTwitter" name="twitter" placeholder="Twitter username">
               </div>
           </div>
           <div class="form-group">
@@ -73,31 +92,31 @@
               </div>
           </div>
           <div class="form-group">
-          <label for="inputMembers" class="col-sm-2 control-label">Members and instruments</label>
+            <label for="inputMembers" class="col-sm-2 control-label">Members and instruments</label>
             <div class="col-sm-10" id="memberDiv">
-              <div id="memberField0">
-                <div class="col-sm-9">
-                  <input type="text" class="form-control memberField" id="inputMembers0" placeholder="Member">
-                </div>
-                <div class="col-sm-3">
-                  <input type="text" class="form-control instrumentField" id="inputMembersInstrument0" placeholder="Instrument">
+                <div class="memberField0">
+                  <div class="col-sm-9">
+                    <input class="form-control memberField" type="text" id="inputMembers0" placeholder="Member">
+                  </div>
+                  <div class="col-sm-3">
+                    <input class="form-control instrumentField" type="text" id="inputMembersInstrument0" placeholder="Instrument">
+                  </div>
                 </div>
               </div>
-            </div>
             <div class="col-sm-offset-2" id="buttonDiv">
               <button type="button" id="memberButton" class="btn btn-default">Add another member field</button>
               <button type="button" id="removeMemberButton" class="btn btn-default">Remove a member field</button>
             </div>
           </div>
           <div class="form-group">
-          <label for="inputDiscography" class="col-sm-2 control-label">Discography</label>
+            <label for="inputDiscography" class="col-sm-2 control-label">Discography</label>
             <div class="col-sm-10" id="albumDiv">
-              <div id="albumField0">
+              <div class="albumField0">
                 <div class="col-sm-9">
-                  <input type="text" class="form-control albumNameField" id="inputAlbums0" placeholder="Album name">
+                  <input class="form-control albumNameField" type="text" id="inputAlbum0" placeholder="Album name">
                 </div>
                 <div class="col-sm-3">
-                  <input type="text" class="form-control albumYearField" id="inputYear0" placeholder="Publish year">
+                  <input class="form-control albumYearField" type="text" id="inputYear0" placeholder="Publish year">
                 </div>
               </div>
             </div>
@@ -113,7 +132,15 @@
                   <textarea class="form-control" rows="3" id=inputDescription placeholder="Description"></textarea>
               </div>
           </div>
-          <button type="submit" class="btn btn-default col-md-offset-2">Submit</button>
+          <div class="form-group">
+              <label for="inputSlug" class="col-sm-2 control-label">Semantic url</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="inputSlug" name="slug" placeholder="Slug">
+              </div>
+          </div>
+          <div>
+              <button type="submit" class="btn btn-default col-md-offset-2">Submit</button>
+          </div>
         </form>
   </section>
 </div>
