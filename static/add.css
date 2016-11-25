@@ -24,6 +24,15 @@ body {
   border: none;
 }
 
+#navbar-toggle {
+    float: left;
+  }
+
+#bs-example-navbar-collapse-1 {
+  text-align: left;
+}
+
+
 h1 {
   text-align: center;
 }

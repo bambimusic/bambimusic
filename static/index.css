@@ -40,6 +40,14 @@ h1 {
   border: none;
 }
 
+#navbar-toggle {
+    float: left;
+  }
+
+#bs-example-navbar-collapse-1 {
+  text-align: left;
+}
+
 @media (min-width: 768px) {
   .masthead-brand {
     float: left;
@@ -49,9 +57,6 @@ h1 {
   }
 }
 
-/*
- * Cover
- */
 
 .cover {
   padding: 0 20px;
@@ -67,9 +72,6 @@ h1 {
   padding-right: : 30px;
 }
 
-/*
- * Affix and center
- */
 
 @media (min-width: 768px) {
   /* Pull out the header and footer */
