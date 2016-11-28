@@ -69,9 +69,18 @@ window.onload = function() {
     if (albumIdIncrement>1) {albumIdIncrement--;}
   });
 
-  $( '#inputSlug' ).change(function() {
+  //$( '#inputSlug' ).change(function() {
+  //  var slug = $ ( '#inputSlug').val();
+  //  slug = slug.toLowerCase();
+  //  alert( slug.includes("testi") );
+  //});
+
+  $('#slugButton').click(function(){
+    var input = document.getElementById( "inputSlug");
     var slug = $ ( '#inputSlug').val();
-  alert( slug.includes("testi") );
+    slug = slug.toLowerCase();
+    slug = slug.replace(/[^a-zA-Z0-9]+/g,'-');
+    input.value = slug;
   });
 
 }
