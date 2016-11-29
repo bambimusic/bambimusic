@@ -15,7 +15,7 @@
   <header><h1>LOGO</h1></header>
   <div class="container">
     <div class="navbar">
-      <nav class="navbar navbar-inverse navbar-fixed-top">
+      <nav class="navbar navbar-inverse navbar-fixed-top">ss
          <div class="container-fluid">
            <!-- Collect the nav links, forms, and other content for toggling -->
            <div class="navbar-header">
@@ -52,7 +52,7 @@
           <div class="form-group">
               <label for="inputName" class="col-sm-2 control-label">Band/Artist name</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputName" placeholder="Name">
+                  <input type="text" class="form-control" id="inputName" name="name" placeholder="Name">
               </div>
           </div>
           <div class="form-group">
@@ -64,43 +64,42 @@
           <div class="form-group">
               <label for="inputYoutube" class="col-sm-2 control-label">Youtube playlist address</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputYoutube" placeholder="Youtube playlist address">
+                  <input type="text" class="form-control" id="inputYoutube" name="youtube" placeholder="Youtube playlist address">
               </div>
           </div>
           <div class="form-group">
               <label for="inputCountry" class="col-sm-2 control-label">Country of origin</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputCountry" placeholder="Country of origin">
+                  <input type="text" class="form-control" id="inputCountry" name="country" placeholder="Country of origin">
               </div>
           </div>
           <div class="form-group">
               <label for="inputCity" class="col-sm-2 control-label">City of origin</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputCity" placeholder="City of origin">
+                  <input type="text" class="form-control" id="inputCity" name="city" placeholder="City of origin">
               </div>
           </div>
           <div class="form-group">
               <label for="inputGenre" class="col-sm-2 control-label">Genre</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputGenre" placeholder="Genre">
+                  <input type="text" class="form-control" id="inputGenre" name="genre" placeholder="Genre">
               </div>
           </div>
           <div class="form-group">
               <label for="inputFounded" class="col-sm-2 control-label">Year of foundation</label>
               <div class="col-sm-10">
-                  <input type="text" class="form-control" id="inputFounded" placeholder="Year of foundation">
+                  <input type="text" class="form-control" id="inputFounded" name="year" placeholder="Year of foundation">
               </div>
           </div>
           <div class="form-group">
             <label for="inputMembers" class="col-sm-2 control-label">Members and instruments</label>
             <div class="col-sm-10" id="memberDiv">
-                <div class="memberField0">
-                  <div class="col-sm-9">
-                    <input class="form-control memberField" type="text" id="inputMembers0" placeholder="Member">
-                  </div>
-                  <div class="col-sm-3">
-                    <input class="form-control instrumentField" type="text" id="inputMembersInstrument0" placeholder="Instrument">
-                  </div>
+              <div class="memberField0">
+                <div class="col-sm-9">
+                  <input type="text" class="form-control memberField" id="inputMembers0" name="member0" placeholder="Member">
+                </div>
+                <div class="col-sm-3">
+                  <input type="text" class="form-control instrumentField" id="inputMembersInstrument0" name="instrument0" placeholder="Instrument">
                 </div>
               </div>
             <div class="col-sm-offset-2" id="buttonDiv">
@@ -113,10 +112,10 @@
             <div class="col-sm-10" id="albumDiv">
               <div class="albumField0">
                 <div class="col-sm-9">
-                  <input class="form-control albumNameField" type="text" id="inputAlbum0" placeholder="Album name">
+                  <input type="text" class="form-control albumNameField" id="inputAlbums0" name="album0" placeholder="Album name">
                 </div>
                 <div class="col-sm-3">
-                  <input class="form-control albumYearField" type="text" id="inputYear0" placeholder="Publish year">
+                  <input type="text" class="form-control albumYearField" id="inputYear0" name="year0" placeholder="Publish year">
                 </div>
               </div>
             </div>
@@ -128,8 +127,7 @@
           <div class="form-group">
               <label for="inputDescription" class="col-sm-2 control-label">Description</label>
               <div class="col-sm-10">
-                  <!-- <input type="description" class="form-control" id="inputDescription" placeholder="Description"> -->
-                  <textarea class="form-control" rows="3" id=inputDescription placeholder="Description"></textarea>
+                  <textarea class="form-control" rows="3" id=inputDescription name="description" placeholder="Description"></textarea>
               </div>
           </div>
           <div class="form-group">
