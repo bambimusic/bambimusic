@@ -24,9 +24,7 @@ h1 {
           padding-bottom: 5px;
 }
 
-.twitter {
-  position: fixed;
-}
+
 
 .twitter h2 {
     text-align: center;
@@ -44,10 +42,11 @@ display: inline-block;
  font-size: 12px;
  font-weight: bold;
  line-height: 16px;
- margin: 10px 5px;
- padding: 3px;
+ margin-top: 0;
+ margin-right: 5px;
+ margin-left: 10px;
+ margin-bottom: 10px;
  max-width: 468px;
-
 }
 
 
@@ -108,6 +107,13 @@ display: inline-block;
 
 
 @media (min-width: 992px) {
+  .right_section {
+    margin-top: -50px;
+  }
+
   .twitter {
     position: fixed;
+    margin-top: -10px;
+
   }
+}

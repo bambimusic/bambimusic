@@ -9,9 +9,11 @@ albumIdIncrement = 1;
 window.onload = function() {
   $('#memberButton').click(function(){
     var membFld = newElement("div", "memberField" +memberIdIncrement);
-    var membDiv = newElement("div", "col-sm-9");
-    var instrDiv = newElement("div", "col-sm-3");
+    var membDiv = newElement("div", "col-sm-7");
+    var instrDiv = newElement("div", "col-sm-5");
     var membInput = newElement("input", "form-control memberField");
+    var br = document.createElement("br");
+
     membInput.type = "text";
     membInput.name = "member" + memberIdIncrement;
     membInput.id = "inputMembers" + memberIdIncrement;
@@ -25,6 +27,7 @@ window.onload = function() {
     membFld.appendChild(membDiv);
     membFld.appendChild(instrDiv);
     membDiv.appendChild(membInput);
+    membDiv.appendChild(br);
     instrDiv.appendChild(instrInput);
 
     var div = document.getElementById( "memberDiv");
@@ -40,9 +43,10 @@ window.onload = function() {
 
   $('#albumButton').click(function(){
     var albumFld = newElement("div", "albumField" +albumIdIncrement);
-    var albumDiv = newElement("div", "col-sm-9");
-    var yearDiv = newElement("div", "col-sm-3");
+    var albumDiv = newElement("div", "col-sm-7");
+    var yearDiv = newElement("div", "col-sm-5");
     var albumInput = newElement("input", "form-control albumNameField");
+    var br = document.createElement("br");
     albumInput.type = "text";
     albumInput.name = "album" + albumIdIncrement;
     albumInput.id = "inputAlbum" + albumIdIncrement;
@@ -56,6 +60,7 @@ window.onload = function() {
     albumFld.appendChild(albumDiv);
     albumFld.appendChild(yearDiv);
     albumDiv.appendChild(albumInput);
+    albumDiv.appendChild(br);
     yearDiv.appendChild(yearInput);
 
     var div = document.getElementById( "albumDiv");
