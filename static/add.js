@@ -5,6 +5,7 @@ function newElement(elementName, className){
 }
 memberIdIncrement = 1;
 albumIdIncrement = 1;
+isValidated = false;
 
 window.onload = function() {
   $('#memberButton').click(function(){
@@ -37,8 +38,10 @@ window.onload = function() {
   });
 
   $('#removeMemberButton').click(function(){
-    $( ".memberField" +(memberIdIncrement-1) ).remove();
-    if (memberIdIncrement>1) {memberIdIncrement--;}
+    if (memberIdIncrement>1) {
+        $( ".memberField" +(memberIdIncrement-1) ).remove();
+        memberIdIncrement--;
+    }
   });
 
   $('#albumButton').click(function(){
@@ -70,8 +73,12 @@ window.onload = function() {
   });
 
   $('#removeAlbumButton').click(function(){
-    $( ".albumField" +(albumIdIncrement-1) ).remove();
-    if (albumIdIncrement>1) {albumIdIncrement--;}
+
+    if(albumIdIncrement > 1) {
+      $( ".albumField" +(albumIdIncrement-1) ).remove();
+      albumIdIncrement--;
+    }
+
   });
 
   //$( '#inputSlug' ).change(function() {
@@ -86,6 +93,10 @@ window.onload = function() {
     slug = slug.toLowerCase();
     slug = slug.replace(/[^a-zA-Z0-9]+/g,'-');
     input.value = slug;
+
+    isValidated = true;
+    document.getElementById("submitButton").disabled = false;
+    //input.onChange tänne vielä disablointi jos muutetaankin inputin arvoa
   });
 
 }
