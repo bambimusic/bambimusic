@@ -5,7 +5,6 @@ function newElement(elementName, className){
 }
 memberIdIncrement = 1;
 albumIdIncrement = 1;
-isValidated = false;
 
 window.onload = function() {
   $('#memberButton').click(function(){
@@ -94,9 +93,14 @@ window.onload = function() {
     slug = slug.replace(/[^a-zA-Z0-9]+/g,'-');
     input.value = slug;
 
-    isValidated = true;
-    document.getElementById("submitButton").disabled = false;
-    //input.onChange tänne vielä disablointi jos muutetaankin inputin arvoa
+    if(input.value.length != 0) {
+      document.getElementById("submitButton").disabled = false;
+    }
+    
   });
+
+  $("#inputSlug").keypress(function() {
+    document.getElementById("submitButton").disabled = true;
+});
 
 }
