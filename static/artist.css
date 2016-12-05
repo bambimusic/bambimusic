@@ -86,9 +86,6 @@ display: inline-block;
 
 .youtube {
   position: fixed;
-  margin-top: 35em;
-  height: 400px;
-  width: 400px;
 }
 
 .youtube h2 {
@@ -100,9 +97,16 @@ display: inline-block;
   }
 
 @media (min-width: 300px) {
+
   .twitter {
     position: relative;
   }
+
+  .youtube {
+    position: relative;
+    min-width: 400px;
+  }
+
 }
 
 
@@ -114,6 +118,12 @@ display: inline-block;
   .twitter {
     position: fixed;
     margin-top: -10px;
+  }
 
+  .youtube {
+    position: fixed;
+    margin-top: 35em;
+    height: 200px;
+    width: 400px;
   }
 }
