@@ -14,7 +14,7 @@
 
 <body>
 
-  <header><h1>{{ artist["artist"] }}</h1></header>
+  <header><h1>{{ artist["name"] }}</h1></header>
 
   <div class="container">
     <div class="row">
@@ -74,8 +74,8 @@
             <dl class="dl-horizontal">
               <dt>Members: </dt>
               <dd class="list-unstyled">
-                  {% for member in artist["members"] %}
-                    <li>{{ member }}
+                  {% for key, value in artist["members"].iteritems() %}
+                    <li>{{ value[0] + ", " + value[1] }}</li>
                   {% endfor %}
               </dd>
             </dl>
@@ -98,34 +98,15 @@
                         <th>Album name</th>
                         <th>Publish year</th>
                       </tr>
+                      {% for key, value in artist["albums"].iteritems() %}
                       <tr>
-                        <td>Album 1</td>
-                        <td>2016</td>
+                        <td>{{ value[0] }}</td>
+                        <td>{{ value[1] }}</td>
                       </tr>
+                      {% endfor %}
                     </table>
                   </p>
                 </div>
-                <div role="tabpanel" class="tab-pane" id="links"><p>jotain linkkejaYou can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:You can use all Bootstrap plugins purely through the markup API without writing a single line of JavaScript. This is Bootstrap's first-class API and should be your first consideration when using a plugin.
-
-That said, in some situations it may be desirable to turn this functionality off. Therefore, we also provide the ability to disable the data attribute API by unbinding all events on the document namespaced with data-api. This looks like this:</p></div>
               </div>
             </div>
 

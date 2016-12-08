@@ -1,6 +1,7 @@
 #-*- coding: utf-8 -*-
 import codecs
 import dataset
+import ast
 import os
 import psycopg2
 
@@ -16,7 +17,6 @@ def addToDB(data):
 def getArtist(slugArtist):
 	artist = table.find_one(slug = slugArtist)
 	if artist:
+		artist['members'] = ast.literal_eval(artist['members'])
+		artist['albums'] = ast.literal_eval(artist['albums'])
 		return artist
-
-
-	

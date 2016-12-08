@@ -16,6 +16,7 @@ def root_route():
 @app.route('/<string:artist_slug>')
 def artist_route(artist_slug):
     artist = Tietokannat.getArtist(artist_slug)
+    # import pdb; pdb.set_trace()
     twitter = Twitter.Timeline('voiceinsidehead')
     return render_template('artist.html', artist = artist, tweets = twitter.tweets)
 
@@ -36,31 +37,32 @@ def add_artist():
         slug = request.form['slug']
 
         moreMembers = True
-        members = []
+        members = {}
         i = 0
         while moreMembers:
             member = 'member' + str(i)
             instrument = 'instrument' + str(i)
             i = i + 1
             try:
-                members.append(request.form[member])
+                members[member] = (request.form[member], request.form[instrument])
             except KeyError:
                 moreMembers = False
 
+        print(members)
 
         moreAlbums = True
-        albums = []
+        albums = {}
         j = 0
         while moreAlbums:
             album = 'album' + str(j)
             albumYear = 'year' + str(j)
             j = j + 1
             try:
-                albums.append(request.form[album])
+                albums[album] = (request.form[album], request.form[albumYear])
             except KeyError:
                 moreAlbums = False
 
-        data = { "name" : name, "twitter" : twitter, "youtube" : youtube, "country" : country, "city" : city, "genre" : genre, "year" : year, "members": members, "albums" : albums, "description" : description, "slug" : slug}
+        data = { "name" : name, "twitter" : twitter, "youtube" : youtube, "country" : country, "city" : city, "genre" : genre, "year" : year, "members": str(members), "albums" : str(albums), "description" : description, "slug" : slug}
 
         if Tietokannat.addToDB(data):
             return redirect(url_for('artist_route', artist_slug=data['slug']))
