@@ -35,9 +35,9 @@
             </ul>
             <form class="navbar-form navbar-left">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search artist or band">
+                <input type="text" class="form-control" id="searchInput" placeholder="Search artist or band">
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="button" id="searchButton" class="btn btn-default">Search</button>
             </form>
             </div>
           </div>
@@ -146,14 +146,23 @@
                   <button type="button" id="slugButton" class="btn btn-default">Validate</button>
               </div>
           </div>
-          <div>
-              <button type="submit" id="submitButton" disabled="true" class="btn btn-default col-md-offset-2">Submit</button>
-          </div>
+</div>
+
+          <button type="submit" id="submitButton" class="btn btn-default col-md-offset-2" disabled="true" >Submit</button>
         </form>
   </section>
 </div>
-
 <script src="static/add.js"></script>
+
+<footer class="footer" align="center">
+  <div class="container">
+    <a href="#" class="text-muted">Rekisteriseloste</a>
+  </div>
+</footer>
+
+<script src="static/search.js"></script>
+
+
 </body>
 
 </html>
