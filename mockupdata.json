@@ -7,5 +7,8 @@
   "genre" : "Bassomusiikki",
   "found" : "2016",
   "members" : ["Minä", "sinä", "hän"],
+  "instruments" : ["Laulu", "kitara", "basso"],
+  "albums" : ["Albumi yksi", "Albumi kaksi"],
+  "albumYears" : ["1991", "1992"],
   "description" : "Tässä bändi kertoo itsestään jänniä juttuja"
 }
