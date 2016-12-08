@@ -18,6 +18,14 @@ body {
 #buttonDiv{
 }
 
+#slugButton {
+  margin: 0;
+}
+
+#slugDiv {
+  padding: 0;
+}
+
 .navbar-inverse {
   font-family: Verdana, Helvetica, Arial, sans-serif;
   background-color: #333;
