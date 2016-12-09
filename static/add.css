@@ -15,15 +15,9 @@ body {
   padding: 0;
 }
 
-#buttonDiv{
-}
 
 #slugButton {
   margin: 0;
-}
-
-#slugDiv {
-  padding: 0;
 }
 
 .navbar-inverse {
@@ -59,4 +53,18 @@ h1 {
   height: 35px;
   background-color: #333;
   text-align: center;
+}
+
+.memberField {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+.albumField {
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+#inputDiv {
+  padding: 0;
 }

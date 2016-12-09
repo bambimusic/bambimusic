@@ -8,15 +8,15 @@ albumIdIncrement = 1;
 
 window.onload = function() {
   $('#memberButton').click(function(){
-    var membFld = newElement("div", "memberField" +memberIdIncrement);
+    var membFld = newElement("div", "memberField col-sm-12");
     var membDiv = newElement("div", "col-sm-7");
     var instrDiv = newElement("div", "col-sm-5");
-    var membInput = newElement("input", "form-control memberField");
-    var br = document.createElement("br");
+    var membInput = newElement("input", "form-control");
 
     membInput.type = "text";
     membInput.name = "member" + memberIdIncrement;
     membInput.id = "inputMembers" + memberIdIncrement;
+    membFld.id = "memberField" + memberIdIncrement;
     membInput.placeholder = "Member";
     var instrInput = newElement("input", "form-control instrumentField");
     instrInput.type = "text";
@@ -27,7 +27,6 @@ window.onload = function() {
     membFld.appendChild(membDiv);
     membFld.appendChild(instrDiv);
     membDiv.appendChild(membInput);
-    membDiv.appendChild(br);
     instrDiv.appendChild(instrInput);
 
     var div = document.getElementById( "memberDiv");
@@ -38,20 +37,21 @@ window.onload = function() {
 
   $('#removeMemberButton').click(function(){
     if (memberIdIncrement>1) {
-        $( ".memberField" +(memberIdIncrement-1) ).remove();
+        $( "#memberField" +(memberIdIncrement-1) ).remove();
         memberIdIncrement--;
     }
   });
 
   $('#albumButton').click(function(){
-    var albumFld = newElement("div", "albumField" +albumIdIncrement);
+    var albumFld = newElement("div", "albumField col-sm-12");
     var albumDiv = newElement("div", "col-sm-7");
     var yearDiv = newElement("div", "col-sm-5");
     var albumInput = newElement("input", "form-control albumNameField");
-    var br = document.createElement("br");
+
     albumInput.type = "text";
     albumInput.name = "album" + albumIdIncrement;
     albumInput.id = "inputAlbum" + albumIdIncrement;
+    albumFld.id = "albumField" + albumIdIncrement;
     albumInput.placeholder = "Album name";
     var yearInput = newElement("input", "form-control albumYearField");
     yearInput.type = "text";
@@ -62,7 +62,6 @@ window.onload = function() {
     albumFld.appendChild(albumDiv);
     albumFld.appendChild(yearDiv);
     albumDiv.appendChild(albumInput);
-    albumDiv.appendChild(br);
     yearDiv.appendChild(yearInput);
 
     var div = document.getElementById( "albumDiv");
@@ -74,7 +73,7 @@ window.onload = function() {
   $('#removeAlbumButton').click(function(){
 
     if(albumIdIncrement > 1) {
-      $( ".albumField" +(albumIdIncrement-1) ).remove();
+      $( "#albumField" +(albumIdIncrement-1) ).remove();
       albumIdIncrement--;
     }
 
@@ -96,7 +95,7 @@ window.onload = function() {
     if(input.value.length != 0) {
       document.getElementById("submitButton").disabled = false;
     }
-    
+
   });
 
   $("#inputSlug").keypress(function() {
