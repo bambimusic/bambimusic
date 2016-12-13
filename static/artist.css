@@ -22,8 +22,13 @@ h1 {
           border: thin solid #fff;
           padding-top: 15px;
           padding-bottom: 5px;
+  min-height: 400px;
 }
 
+.video {
+  margin-top: 40px;
+  margin-right: 20px;
+}
 
 
 .twitter h2 {

@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from APICalls.Twitter import Twitter
+from APICalls.Youtube import Youtube
 from Tietokannat import Tietokannat
 import json
 
@@ -16,9 +17,9 @@ def root_route():
 @app.route('/<string:artist_slug>')
 def artist_route(artist_slug):
     artist = Tietokannat.getArtist(artist_slug)
-    # import pdb; pdb.set_trace()
-    twitter = Twitter.Timeline('voiceinsidehead')
-    return render_template('artist.html', artist = artist, tweets = twitter.tweets)
+    youtube = Youtube.Playlist(artist["youtube"])
+    twitter = Twitter.Timeline(artist["twitter"])
+    return render_template('artist.html', artist = artist, tweets = twitter.tweets, videos = youtube.videos)
 
 
 @app.route('/add', methods=['GET', 'POST'])

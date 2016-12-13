@@ -6,6 +6,7 @@
 <title>Bambimusic</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href={{ url_for('static', filename='artist.css') }} />
+<link rel="stylesheet" href="https://cdn.plyr.io/2.0.11/plyr.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
@@ -44,88 +45,97 @@
       </div>
     </div>
 
-    <section class="middle_section col-md-8">
-      <dl class="dl-horizontal">
-        <dt>Country of origin: </dt>
-        <dd class="list-unstyled">
-          {{ artist["country"] }}
-        </dd>
-      </dl>
-      <dl class="dl-horizontal">
-        <dt>City of origin: </dt>
-        <dd class="list-unstyled">
-          {{ artist["city"] }}
-        </dd>
-      </dl>
-      <dl class="dl-horizontal">
-        <dt>Genre: </dt>
-        <dd class="list-unstyled">
+    <div class="row">
+      <section class="middle_section col-md-8">
+        <dl class="dl-horizontal">
+          <dt>Country of origin: </dt>
+          <dd class="list-unstyled">
+            {{ artist["country"] }}
+          </dd>
+        </dl>
+        <dl class="dl-horizontal">
+          <dt>City of origin: </dt>
+          <dd class="list-unstyled">
+            {{ artist["city"] }}
+          </dd>
+        </dl>
+        <dl class="dl-horizontal">
+          <dt>Genre: </dt>
+          <dd class="list-unstyled">
           {{ artist["genre"] }}
-        </dd>
-      </dl>
-      <dl class="dl-horizontal">
-        <dt>Founded: </dt>
-        <dd class="list-unstyled">
-          {{ artist["year"] }}
-        </dd>
-      </dl>
-      <dl class="dl-horizontal">
-        <dt>Members: </dt>
-        <dd class="list-unstyled">
+          </dd>
+        </dl>
+        <dl class="dl-horizontal">
+          <dt>Founded: </dt>
+          <dd class="list-unstyled">
+            {{ artist["year"] }}
+          </dd>
+        </dl>
+        <dl class="dl-horizontal">
+          <dt>Members: </dt>
+          <dd class="list-unstyled">
           {% for key, value in artist["members"].iteritems() %}
             <li>{{ value[0] + ", " + value[1] }}</li>
           {% endfor %}
-        </dd>
-      </dl>
+          </dd>
+        </dl>
 
-      <!-- <div> -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#description" data-toggle="tab" aria-controls="description" role="tab">Description</a></li>
           <li role="presentation"><a href="#discography" data-toggle="tab" aria-controls="discography" role="tab">Discography</a></li>
         </ul>
 
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="description">
-          <p>{{ artist["description"] }}</p>
+        <div class="tab-content">
+          <div role="tabpanel" class="tab-pane active" id="description">
+            <p>{{ artist["description"] }}</p>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="discography">
+            <p>
+              <table class="table-responsive">
+                <tr>
+                  <th>Album name</th>
+                  <th>Publish year</th>
+                </tr>
+                {% for key, value in artist["albums"].iteritems() %}
+                <tr>
+                  <td>{{ value[0] }}</td>
+                  <td>{{ value[1] }}</td>
+                </tr>
+                {% endfor %}
+              </table>
+            </p>
+          </div>
         </div>
-        <div role="tabpanel" class="tab-pane" id="discography">
-          <p>
-            <table class="table-responsive">
-              <tr>
-                <th>Album name</th>
-                <th>Publish year</th>
-              </tr>
-              {% for key, value in artist["albums"].iteritems() %}
-              <tr>
-                <td>{{ value[0] }}</td>
-                <td>{{ value[1] }}</td>
-              </tr>
-              {% endfor %}
-            </table>
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="right_section col-xs-8 col-md-4">
-      <div class="twitter">
-        <h2>Twitter</h2>
-        <div class="tweets">
-        {% for tweet in tweets %}
-          {% include "includes/tweet.html" %}
-        {% endfor %}
+      <section class="right_section col-xs-8 col-md-4">
+        <div class="twitter">
+          <h2>Twitter</h2>
+          <div class="tweets">
+          {% for tweet in tweets %}
+            {% include "includes/tweet.html" %}
+          {% endfor %}
+          </div>
         </div>
-      </div>
-      </br>
-      <div class="youtube">
-        <h2>Youtube</h2>
-        <p>Tänne youtube juttuja... </p>
-        <div data-type="youtube" data-video-id="zCPh73dRCD8"></div>
-      </div>
-    </section>
+      </section>
+    </div>
+
+
+    <div class="row">
+      {% for i in range(0, 3) %}
+        {% if videos[i] %}
+          <div class="col-sm-3 video">
+            <div data-type="youtube" data-video-id={{ videos[i].videoId  }}></div>
+            <h5>{{ videos[i].title  }}</h5>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
   </div>
 
 <script src="static/search.js"></script>
+<script src="https://cdn.plyr.io/2.0.11/plyr.js"></script>
+<script>plyr.setup({controls : []})</script>
 </body>
 
 </html>
