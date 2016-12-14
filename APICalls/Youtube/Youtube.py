@@ -15,6 +15,7 @@ class Playlist:
         r = requests.get(PLAYLIST_URL, params = {"part" : "snippet", "playlistId" : self.playlistID, "key" : os.environ["YOUTUBE_KEY"]})
         playlist = r.json()
         print playlist
-        items = playlist["items"]
-        for video in items:
-            self.videos.append(YTube(video))
+        if not playlist["error"]:
+            items = playlist["items"]
+            for video in items:
+                self.videos.append(YTube(video))

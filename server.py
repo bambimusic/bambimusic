@@ -17,6 +17,8 @@ def root_route():
 @app.route('/<string:artist_slug>')
 def artist_route(artist_slug):
     artist = Tietokannat.getArtist(artist_slug)
+    if not artist:
+        return "Artist not Found"
     youtube = Youtube.Playlist(artist["youtube"])
     twitter = Twitter.Timeline(artist["twitter"])
     return render_template('artist.html', artist = artist, tweets = twitter.tweets, videos = youtube.videos)
@@ -68,4 +70,4 @@ def add_artist():
         if Tietokannat.addToDB(data):
             return redirect(url_for('artist_route', artist_slug=data['slug']))
         else:
-            return render_template('add.html')
+            return render_template('add.html', error="Slug is in use")

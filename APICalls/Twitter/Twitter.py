@@ -14,5 +14,7 @@ class Timeline:
 
     def fetchTimeline(self):
         r = requests.get(TIMELINE_URL, headers = Timeline.header, params = {"screen_name" : self.timeline})
-        for tweet in r.json():
-            self.tweets.append(Tweet(tweet))
+        tweets = r.json()
+        if not tweets:
+            for tweet in tweets:
+                self.tweets.append(Tweet(tweet))

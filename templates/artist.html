@@ -47,30 +47,39 @@
 
     <div class="row">
       <section class="middle_section col-md-8">
+        {% if artist["country"]%}
         <dl class="dl-horizontal">
           <dt>Country of origin: </dt>
           <dd class="list-unstyled">
             {{ artist["country"] }}
           </dd>
         </dl>
+        {% endif %}
+        {% if artist["city"]%}
         <dl class="dl-horizontal">
           <dt>City of origin: </dt>
           <dd class="list-unstyled">
             {{ artist["city"] }}
           </dd>
         </dl>
+        {% endif %}
+        {% if artist["genre"]%}
         <dl class="dl-horizontal">
           <dt>Genre: </dt>
           <dd class="list-unstyled">
           {{ artist["genre"] }}
           </dd>
         </dl>
+        {% endif %}
+        {% if artist["year"]%}
         <dl class="dl-horizontal">
           <dt>Founded: </dt>
           <dd class="list-unstyled">
             {{ artist["year"] }}
           </dd>
         </dl>
+        {% endif %}
+        {% if artist["members"]%}
         <dl class="dl-horizontal">
           <dt>Members: </dt>
           <dd class="list-unstyled">
@@ -79,6 +88,7 @@
           {% endfor %}
           </dd>
         </dl>
+        {% endif %}
 
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="active"><a href="#description" data-toggle="tab" aria-controls="description" role="tab">Description</a></li>
@@ -108,19 +118,21 @@
         </div>
       </section>
 
+      {% if tweets %}
       <section class="right_section col-xs-8 col-md-4">
         <div class="twitter">
           <h2>Twitter</h2>
           <div class="tweets">
-          {% for tweet in tweets %}
-            {% include "includes/tweet.html" %}
-          {% endfor %}
+              {% for tweet in tweets %}
+                {% include "includes/tweet.html" %}
+              {% endfor %}
           </div>
         </div>
       </section>
+      {% endif %}
     </div>
 
-
+    {% if videos %}
     <div class="row">
       {% for i in range(0, 3) %}
         {% if videos[i] %}
@@ -132,6 +144,7 @@
       {% endfor %}
     </div>
   </div>
+  {% endif %}
 
 <script src="static/search.js"></script>
 <script src="https://cdn.plyr.io/2.0.11/plyr.js"></script>

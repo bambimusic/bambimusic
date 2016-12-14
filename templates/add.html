@@ -63,7 +63,7 @@
           </div>
 
           <div class="form-group">
-              <label for="inputYoutube" class="col-sm-2 control-label">Youtube playlist address</label>
+              <label for="inputYoutube" class="col-sm-2 control-label">Youtube playlistID</label>
               <div class="col-sm-7">
                   <input type="text" class="form-control" id="inputYoutube" name="youtube" placeholder="Youtube playlist address">
               </div>
@@ -134,7 +134,12 @@
                   <textarea class="form-control" rows="3" id=inputDescription name="description" placeholder="Description"></textarea>
               </div>
           </div>
-          <div class="form-group">
+          <div class=
+          {% if error %}
+            "form-group has-error"
+          {% else %}
+            "form-group"
+          {% endif %}>
               <label for="inputSlug" class="col-sm-2 control-label">Semantic url</label>
               <div id="inputDiv" class="col-sm-7">
                 <div class="col-sm-10">
@@ -145,7 +150,12 @@
                 </div>
             </div>
           </div>
-          <button type="submit" id="submitButton" class="btn btn-default col-md-offset-2" disabled="true" >Submit</button>
+            <button type="submit" id="submitButton" class="btn btn-default col-md-offset-2" disabled="true" >Submit</button>
+            {% if error %}
+            <div class="col-md-offset-2">
+              <h4>{{ error }}</h4>
+            </div>
+            {% endif %}
 </div>
 
 
@@ -153,13 +163,6 @@
   </section>
 </div>
 <script src="static/add.js"></script>
-
-<footer class="footer" align="center">
-  <div class="container">
-    <a href="#" class="text-muted">Rekisteriseloste</a>
-  </div>
-</footer>
-
 <script src="static/search.js"></script>
 
 
