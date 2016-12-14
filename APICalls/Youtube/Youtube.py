@@ -14,7 +14,7 @@ class Playlist:
     def fetchPlaylist(self):
         r = requests.get(PLAYLIST_URL, params = {"part" : "snippet", "playlistId" : self.playlistID, "key" : os.environ["YOUTUBE_KEY"]})
         playlist = r.json()
-        print playlist
+        # print playlist
         if not playlist.get("error"):
             items = playlist["items"]
             for video in items:
